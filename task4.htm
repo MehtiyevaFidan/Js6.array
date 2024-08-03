@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="min()">Sil</button>
+    <input type="number" id="inp" />
+    <button onclick="btn()">Ok</button>
+    <div id="netice"></div>
+    <script>
+        const inp = document.getElementById('inp');
+        const netice = document.getElementById('netice');
+        let array = [];
+
+        function btn() {
+            const value = inp.value;
+                array.push(value);
+                reqem();
+                inp.value = ''; 
+            }
+        function min() {
+            if (array.length > 0) {
+                array.pop();
+                reqem();
+            }
+        }
+        function reqem() {
+            let kod = '';
+            for (let i = 0; i < array.length; i++) {
+                kod += array[i] + '<br/>';
+            }
+            netice.innerHTML = kod;
+        }
+    </script>
+</body>
+</html>

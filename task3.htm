@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp"/>
+    <button onclick="btn()">=</button>
+    <div id="netice"></div>
+    <script>
+        const inp = document.getElementById('inp');
+        const netice = document.getElementById('netice');
+        let array = [];
+        let rgb = [];
+
+        function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function btn() {
+            const input = inp.value;
+            if (input) {
+                array.push(input.toUpperCase());
+                rgb.push(`${rand(0, 255)},${rand(0, 255)},${rand(0, 255)}`);
+                inp.value = '';
+                let box = '';
+                for (let i = 0; i < array.length; i++) {
+                    box += `<div style="background-color: rgb(${rgb[i]}); color: white; padding: 5px; margin: 5px; display: inline-block;">
+                                        ${array[i]}
+                                    </div>`;
+                }
+                netice.innerHTML = box; 
+            }
+        }
+    </script>
+</body>
+</html>

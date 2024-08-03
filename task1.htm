@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Orignal Adlar: <span id="original" style="color: red;"></span></h3>
+    <h3>Deyisen Adlar: <span id="deyismis" style="color: red;"></span></h3>
+
+    <script>
+        const originalAd = document.getElementById('original');
+        const deyisenAd = document.getElementById('deyismis');
+        const array = ['emma', 'liam', 'olivia', 'noah', 'ava', 'william', 'sophia', 'jackson'];
+        const adlarinArrayi = [];
+
+        let originallar = "";
+        let deyisenler = "";
+
+        for (let i = 0; i < array.length; i++) {
+            const deyisenAd = array[i][0].toUpperCase() + array[i].slice(1);
+            adlarinArrayi.push(deyisenAd);
+
+            originallar += array[i];
+            deyisenler += deyisenAd;
+
+            if (i < array.length - 1) {
+                originallar += ", ";
+                deyisenler += ", ";
+            }
+        }
+
+        originalAd.innerHTML = originallar;
+        deyisenAd.innerHTML = deyisenler;
+    </script>
+</body>
+
+</html>

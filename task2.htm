@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp"/>
+    <button onclick="btn()">=</button>
+    <p id="netice"></p>
+    <script>
+        const inp = document.getElementById('inp');
+        const netice = document.getElementById('netice');
+        let array = "";
+        function btn() {
+            const input = inp.value;
+            if (input) {
+                const upperCase = input.toUpperCase();
+                if (array) {
+                    array += ", " + upperCase;
+                } else {
+                    array = upperCase;
+                }
+                
+                netice.innerHTML = array;
+                inp.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

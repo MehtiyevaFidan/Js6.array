@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="netice"></div>
+    <script>
+        const netice = document.getElementById('netice')
+        const ad = 'fidan '
+        let array = []
+        function btn(){
+            for(let i=0; i< ad.length-1; i++){
+                array.push(ad.slice(0,i) + ad.toUpperCase()[i] + ad.slice(i+1))
+                netice.innerHTML += `<h1>${array[i]}</h1>`
+                }
+        }
+        btn()
+    </script>
+</body>
+</html>
